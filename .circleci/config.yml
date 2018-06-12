@@ -1,0 +1,27 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/smb-admin-ui
+    docker:
+      - image: circleci/node:9.2
+    steps:
+      - checkout
+      - run:
+          name: Install node_modules
+          command: yarn
+      - save_cache:
+          key: yarn-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - .cache/yarn
+      - run:
+          name: Run ESlint && Prettier
+          command: yarn run lint && yarn run prettify
+      - run:
+          name: Run Flow && Jest tests
+          command: yarn flow && yarn test
+
+workflows:
+   version: 2
+   build-and-deploy:
+     jobs:
+       - build
