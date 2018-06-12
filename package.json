@@ -37,8 +37,8 @@
     "test:coverage": "yarn test --coverage",
     "build": "NODE_ENV='production' yarn run build:clean && yarn run build:lib && yarn run build:flow",
     "build:clean": "rimraf lib",
-    "build:lib": "NODE_ENV='production' babel -d lib src/lib --ignore '**/test.js' --copy-files",
-    "build:flow": "NODE_ENV='production' flow-copy-source -v -i '**/test.js' src/lib lib"
+    "build:lib": "NODE_ENV='production' babel -d lib src --ignore '**/test.js' --copy-files",
+    "build:flow": "NODE_ENV='production' flow-copy-source -v -i '**/test.js' src lib"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -133,6 +133,18 @@
       "web.jsx",
       "jsx",
       "node"
+    ]
+  },
+  "babel": {
+    "plugins": [
+      "babel-plugin-styled-components",
+      "transform-flow-strip-types"
+    ],
+    "presets": [
+      "env",
+      "flow",
+      "react-app",
+      "stage-3"
     ]
   }
 }

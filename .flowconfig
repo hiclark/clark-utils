@@ -1,6 +1,6 @@
 [ignore]
-.*/src/.*
 .*/node_modules/.*
+.*/lib/.*
 
 [include]
 
