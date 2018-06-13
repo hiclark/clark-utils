@@ -1,7 +1,7 @@
 // @flow
 
 export const formatHours = (hours: number): string =>
-  hours > 1 ? `${hours} hours` : `${hours} hour`;
+  hours === 1 ? `${hours} hour` : `${hours} hours`;
 
 export const formatMinutes = (minutes: number): string =>
   minutes > 1 ? `${minutes} minutes` : `${minutes} minute`;
