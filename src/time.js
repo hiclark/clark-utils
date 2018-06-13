@@ -1,3 +1,5 @@
+// @flow
+
 export const formatHours = (hours: number): string =>
   hours > 1 ? `${hours} hours` : `${hours} hour`;
 

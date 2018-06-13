@@ -1,7 +1,7 @@
 {
   "parser": "babel-eslint",
-  "extends": ["airbnb", "prettier"],
-  "plugins": ["prettier"],
+  "extends": ["airbnb", "prettier", "plugin:flowtype/recommended"],
+  "plugins": ["prettier", "flowtype"],
   "env": {
     "browser": true,
     "node": true,
@@ -14,6 +14,12 @@
     "spy": false
   },
   "rules": {
+    "flowtype/require-valid-file-annotation": [
+      2,
+      "always", {
+        "annotationStyle": "line"
+      }
+    ],
     "react/jsx-filename-extension": 0,
     "react/prop-types": 0,
     "import/no-extraneous-dependencies": [ "error", {

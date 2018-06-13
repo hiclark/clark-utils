@@ -15,6 +15,5 @@ untyped-import=warn
 unclear-type=warn
 
 [options]
-all=true
 
 [strict]
