@@ -42,4 +42,4 @@ For convience sake, we use the [cut-release](https://github.com/bjoerge/cut-rele
 
 ### Usage
 
-To use the library run `yarn add clark-utils`. Note that this package isn't bundled - we use it in apps that are built with [Webpack](https://webpack.js.org/guides/getting-started/).
+To use the library run `yarn add clark-utils`. Note that this package isn't bundled - we use it in apps that are built with [Webpack](https://webpack.js.org/guides/getting-started/). Additionally, it has been opensourced primarily for educational purposes. If a function isn't working as you'd expect it to, we recommend forking the repo or copying the code that you want to use into another package.

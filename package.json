@@ -1,10 +1,10 @@
 {
   "name": "clark-utils",
   "version": "0.0.4",
-  "description": "Clark Shared Utils",
+  "description": "Shared utility functions for Clark frontend applications",
   "main": "lib/index.js",
   "author": "Clark, Inc.",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hiclark/clark-utils.git"
