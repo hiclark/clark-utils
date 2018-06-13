@@ -1,3 +1,5 @@
+// @flow
+
 import { formatTime } from './time';
 
 describe('formatTime', () => {
