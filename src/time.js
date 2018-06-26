@@ -1,4 +1,5 @@
 // @flow
+import moment from 'moment';
 
 export const formatHours = (hours: number): string =>
   hours === 1 ? `${hours} hour` : `${hours} hours`;
@@ -23,3 +24,12 @@ export const formatTime = (hours: number): string => {
 
   return formatMinutes(minutes);
 };
+
+export const formatTimeWithPeriod = (time: string, period: string) =>
+  `${time} ${period}`;
+
+export const combinedDateAndTime = (date: moment, time: moment) =>
+  moment(date)
+    .hour(time.get('hour'))
+    .minute(time.get('minute'))
+    .format();
