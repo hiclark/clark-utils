@@ -1,3 +1,8 @@
 // @flow
 
-export { formatTime, formatHours } from './time';
+export {
+  formatTime,
+  formatHours,
+  formatTimeWithPeriod,
+  combinedDateAndTime,
+} from './time';

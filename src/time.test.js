@@ -1,6 +1,7 @@
 // @flow
 
-import { formatTime } from './time';
+import moment from 'moment';
+import { formatTime, formatTimeWithPeriod, combinedDateAndTime } from './time';
 
 describe('formatTime', () => {
   it('returns the expected result', () => {
@@ -19,5 +20,22 @@ describe('formatTime', () => {
     testValues.forEach(testValue =>
       expect(formatTime(testValue.input)).toEqual(testValue.output),
     );
+  });
+});
+
+describe('formatTimeWithPeriod', () => {
+  it('returns time with period', () => {
+    expect(formatTimeWithPeriod('1:00', 'pm')).toEqual('1:00 pm');
+  });
+});
+
+describe('combinedDateAndTime', () => {
+  it('returns formatted date and time', () => {
+    const date = moment('2018-06-27T05:00:00.000');
+    const time = moment('7:00 pm', 'HH:mm');
+
+    const formattedDate = date.add(2, 'hours').format();
+
+    expect(combinedDateAndTime(date, time)).toEqual(formattedDate);
   });
 });
