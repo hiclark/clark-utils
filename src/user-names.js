@@ -22,5 +22,5 @@ export const getInitials = ({ firstName = '', lastName = '' }: User): string =>
 export const getFullName = ({ firstName = '', lastName = '' }: User): string =>
   firstName && lastName ? `${firstName} ${lastName}` : `${firstName}`;
 
-export const makePosessive = (name: string): string =>
+export const makePossessive = (name: string): string =>
   name.slice(-1) === 's' ? `${name}'` : `${name}'s`;

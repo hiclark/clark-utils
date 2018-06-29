@@ -7,4 +7,4 @@ export {
   combinedDateAndTime,
 } from './time';
 
-export { getInitials, getFullName, makePosessive } from './user-names';
+export { getInitials, getFullName, makePossessive } from './user-names';
