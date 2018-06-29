@@ -1,6 +1,6 @@
 // @flow
 
-import { getInitials, getFullName, makePosessive } from './user-names';
+import { getInitials, getFullName, makePossessive } from './user-names';
 
 describe('makePosessive', () => {
   it('returns the expected result', () => {
@@ -14,7 +14,7 @@ describe('makePosessive', () => {
     ];
 
     testValues.forEach(testValue =>
-      expect(makePosessive(testValue.input)).toEqual(testValue.output),
+      expect(makePossessive(testValue.input)).toEqual(testValue.output),
     );
   });
 });
