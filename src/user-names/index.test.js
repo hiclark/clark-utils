@@ -1,6 +1,6 @@
 // @flow
 
-import { getInitials, getFullName, makePossessive } from './user-names';
+import { getInitials, getFullName, makePossessive } from './';
 
 describe('makePosessive', () => {
   it('returns the expected result', () => {
