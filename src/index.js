@@ -1,6 +1,6 @@
 // @flow
 
-export { getFirstElement } from './get-first-element';
+import getFirstElement from './get-first-element';
 
 export {
   formatTime,
@@ -10,3 +10,5 @@ export {
 } from './time';
 
 export { getInitials, getFullName, makePossessive } from './user-names';
+
+export { getFirstElement };
