@@ -1,7 +1,7 @@
 // @flow
 
 import moment from 'moment';
-import { formatTime, formatTimeWithPeriod, combinedDateAndTime } from './time';
+import { formatTime, formatTimeWithPeriod, combinedDateAndTime } from './';
 
 describe('formatTime', () => {
   it('returns the expected result', () => {
