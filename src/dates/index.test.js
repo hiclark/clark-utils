@@ -26,7 +26,7 @@ describe('isToday', () => {
 
 describe('isPast', () => {
   describe('when date is present', () => {
-    it('returns false', () => {
+    it('returns true', () => {
       expect(isPast('1969-12-31 08:30', now)).toEqual(true);
     });
   });
