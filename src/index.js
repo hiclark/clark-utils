@@ -1,5 +1,7 @@
 // @flow
 
+export { getFirstElement } from './get-first-element';
+
 export {
   formatTime,
   formatHours,
