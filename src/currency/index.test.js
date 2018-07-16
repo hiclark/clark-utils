@@ -1,32 +1,11 @@
 // @flow
 import {
-  numberWithCommas,
   centsToDollars,
   dollarsToCents,
   formatCentsToDollars,
   formatDollars,
-  formatRate,
+  formatDollarsPerHour,
 } from './';
-
-describe('numberWithCommas', () => {
-  describe('', () => {
-    it('returns the expected result', () => {
-      const testValues = [
-        { input: 167, output: '167.00' },
-        { input: 1000568.7, output: '1,000,568.70' },
-        { input: 34000, output: '34,000.00' },
-        { input: 87353.12, output: '87,353.12' },
-        { input: '4562.51', output: '4,562.51' },
-        { input: '9328.19747', output: '9,328.20' },
-        { input: 0.5678, output: '0.57' },
-      ];
-
-      testValues.forEach(testValue =>
-        expect(numberWithCommas(testValue.input)).toEqual(testValue.output),
-      );
-    });
-  });
-});
 
 describe('centsToDollars', () => {
   describe('', () => {
@@ -129,7 +108,7 @@ describe('formatRate', () => {
     ];
 
     testValues.forEach(testValue =>
-      expect(formatRate(testValue.input)).toEqual(testValue.output),
+      expect(formatDollarsPerHour(testValue.input)).toEqual(testValue.output),
     );
   });
 });

@@ -1,7 +1,7 @@
 // @flow
 import { Big } from 'big.js';
 
-export const numberWithCommas = (number: number): string =>
+const numberWithCommas = (number: number): string =>
   new Big(number).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
 export const centsToDollars = (cents: number): number =>
@@ -19,5 +19,5 @@ export const formatCentsToDollars = (cents: number): string =>
 export const formatDollars = (dollars: number): string =>
   `$${numberWithCommas(dollars)}`;
 
-export const formatRate = (dollarsPerHour: number): string =>
+export const formatDollarsPerHour = (dollarsPerHour: number): string =>
   `${formatDollars(dollarsPerHour)}/hr`;

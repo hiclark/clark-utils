@@ -1,0 +1,26 @@
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+yarn.lock
+
+# Development folders and files
+/flow-typed
+/src
+/scripts
+CHANGELOG.md
+
+# Linters
+.eslintignore
+.eslintrc
+
+# Dot files/folders
+.gitignore
+.flowconfig
+.circleci/*
+.github/*
