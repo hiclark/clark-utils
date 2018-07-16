@@ -36,14 +36,13 @@ describe('dollarsToCents', () => {
     it('returns the expected result', () => {
       const testValues = [
         { input: 76.8, output: 7680.0 },
-        { input: '87.34', output: 8734 },
-        { input: '$4562.51', output: 456251 },
+        { input: 87.34, output: 8734 },
+        { input: 4562.51, output: 456251 },
         { input: 0.56, output: 56 }, // 0.56 * 100 = 56.00000000000001
         { input: 0.57, output: 57 }, // 0.57 * 100 = 56.99999999999999
       ];
 
       testValues.forEach(testValue =>
-        // $FlowFixMe
         expect(dollarsToCents(testValue.input)).toEqual(testValue.output),
       );
     });
