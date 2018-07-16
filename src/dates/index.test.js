@@ -1,6 +1,6 @@
 // @flow
 import moment from 'moment';
-import { isToday, isPast, isFuture, isInRange } from './';
+import { isToday, isPastDate, isFutureDate, isInDateRange } from './';
 
 const now = moment('1969-12-31 08:30');
 
@@ -24,51 +24,51 @@ describe('isToday', () => {
   });
 });
 
-describe('isPast', () => {
+describe('isPastDate', () => {
   describe('when date is present', () => {
-    it('returns true', () => {
-      expect(isPast('1969-12-31 08:30', now)).toEqual(true);
+    it('returns false', () => {
+      expect(isPastDate('1969-12-31 08:30', now)).toEqual(false);
     });
   });
 
   describe('when date is tomorrow', () => {
     it('returns false', () => {
-      expect(isPast('1970-01-31 14:20', now)).toEqual(false);
+      expect(isPastDate('1970-01-31 14:20', now)).toEqual(false);
     });
   });
 
   describe('when date is yesterday', () => {
     it('returns true', () => {
-      expect(isPast('1969-12-30 14:20', now)).toEqual(true);
+      expect(isPastDate('1969-12-30 14:20', now)).toEqual(true);
     });
   });
 });
 
-describe('isFuture', () => {
+describe('isFutureDate', () => {
   describe('when date is present', () => {
     it('returns false', () => {
-      expect(isFuture('1969-12-31 08:30', now)).toEqual(false);
+      expect(isFutureDate('1969-12-31 08:30', now)).toEqual(false);
     });
   });
 
   describe('when date is tomorrow', () => {
     it('returns true', () => {
-      expect(isFuture('1970-01-31 14:20', now)).toEqual(true);
+      expect(isFutureDate('1970-01-31 14:20', now)).toEqual(true);
     });
   });
 
   describe('when date is yesterday', () => {
     it('returns false', () => {
-      expect(isFuture('1969-12-30 14:20', now)).toEqual(false);
+      expect(isFutureDate('1969-12-30 14:20', now)).toEqual(false);
     });
   });
 });
 
-describe('isInRange', () => {
+describe('isInDateRange', () => {
   const startDate = moment('1970-01-01 08:30');
   const endDate = moment('1970-01-31 08:30');
 
-  const funcWithRange = isInRange(startDate, endDate);
+  const funcWithRange = isInDateRange(startDate, endDate);
 
   describe('when date is in range', () => {
     it('returns true', () => {
@@ -77,14 +77,14 @@ describe('isInRange', () => {
   });
 
   describe('when date is start of range', () => {
-    it('returns false', () => {
-      expect(funcWithRange('1970-01-01 08:30')).toEqual(false);
+    it('returns true', () => {
+      expect(funcWithRange('1970-01-01 08:30')).toEqual(true);
     });
   });
 
   describe('when date is end of range', () => {
-    it('returns false', () => {
-      expect(funcWithRange('1970-01-31 08:30')).toEqual(false);
+    it('returns true', () => {
+      expect(funcWithRange('1970-01-31 08:30')).toEqual(true);
     });
   });
 

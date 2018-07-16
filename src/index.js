@@ -8,7 +8,7 @@ export {
   formatDollarsPerHour,
 } from './currency';
 
-export { isToday, isPast, isFuture, isInRange } from './dates';
+export { isToday, isPastDate, isFutureDate, isInDateRange } from './dates';
 
 export { getFirstElement } from './get-first-element';
 

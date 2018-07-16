@@ -5,12 +5,12 @@ import moment from 'moment';
 export const isToday = (date: string, now: moment = moment()) =>
   now.isSame(date, 'day');
 
-export const isPast = (date: string, now: moment = moment()) =>
-  now.isAfter(moment(date).startOf('day'));
+export const isPastDate = (date: string, now: moment = moment()) =>
+  now.isAfter(moment(date), 'day');
 
-export const isFuture = (date: string, now: moment = moment()) =>
-  now.isBefore(moment(date).startOf('day'));
+export const isFutureDate = (date: string, now: moment = moment()) =>
+  now.isBefore(moment(date), 'day');
 
-export const isInRange = (startDate: moment, endDate: moment) => (
+export const isInDateRange = (startDate: moment, endDate: moment) => (
   date: string,
-): boolean => moment(date).isBetween(startDate, endDate);
+): boolean => moment(date).isBetween(startDate, endDate, 'day', '[]');
