@@ -1,5 +1,5 @@
 // @flow
-import getFirstElement from './get-first-element';
+import { getFirstElement } from './';
 
 describe('getFirstElement', () => {
   describe('when object is empty', () => {
