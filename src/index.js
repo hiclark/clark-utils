@@ -1,6 +1,14 @@
 // @flow
 
 export {
+  centsToDollars,
+  dollarsToCents,
+  formatCentsToDollars,
+  formatDollars,
+  formatDollarsPerHour,
+} from './currency';
+
+export {
   formatTime,
   formatHours,
   formatTimeWithPeriod,
@@ -8,11 +16,3 @@ export {
 } from './time';
 
 export { getInitials, getFullName, makePossessive } from './user-names';
-
-export {
-  centsToDollars,
-  dollarsToCents,
-  formatCentsToDollars,
-  formatDollars,
-  formatDollarsPerHour,
-} from './currency';

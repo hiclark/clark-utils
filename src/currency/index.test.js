@@ -24,6 +24,7 @@ describe('centsToDollars', () => {
       ];
 
       testValues.forEach(testValue =>
+        // $FlowFixMe
         expect(centsToDollars(testValue.input)).toEqual(testValue.output),
       );
     });
@@ -42,6 +43,7 @@ describe('dollarsToCents', () => {
       ];
 
       testValues.forEach(testValue =>
+        // $FlowFixMe
         expect(dollarsToCents(testValue.input)).toEqual(testValue.output),
       );
     });
@@ -63,6 +65,7 @@ describe('formatCentsToDollars', () => {
       ];
 
       testValues.forEach(testValue =>
+        // $FlowFixMe
         expect(formatCentsToDollars(testValue.input)).toEqual(testValue.output),
       );
     });
