@@ -1,7 +1,5 @@
 // @flow
 
-export { getFirstElement } from './get-first-element';
-
 export {
   centsToDollars,
   dollarsToCents,
@@ -9,6 +7,10 @@ export {
   formatDollars,
   formatDollarsPerHour,
 } from './currency';
+
+export { isToday, isPastDate, isFutureDate, isInDateRange } from './dates';
+
+export { getFirstElement } from './get-first-element';
 
 export {
   formatTime,
