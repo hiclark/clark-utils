@@ -65,38 +65,47 @@ describe('isFutureDate', () => {
 });
 
 describe('isInDateRange', () => {
-  const startDate = moment('1970-01-01 08:30');
-  const endDate = moment('1970-01-31 08:30');
+  const startDateString = '1970-01-01 08:30';
+  const endDateString = '1970-01-31 08:30';
 
-  const funcWithRange = isInDateRange(startDate, endDate);
+  const startDate = moment(startDateString);
+  const endDate = moment(endDateString);
+
+  const funcWithStringRange = isInDateRange(startDateString, endDateString);
+  const funcWithMomentRange = isInDateRange(startDate, endDate);
 
   describe('when date is in range', () => {
     it('returns true', () => {
-      expect(funcWithRange('1970-01-14')).toEqual(true);
+      expect(funcWithStringRange('1970-01-14')).toEqual(true);
+      expect(funcWithMomentRange('1970-01-14')).toEqual(true);
     });
   });
 
   describe('when date is start of range', () => {
     it('returns true', () => {
-      expect(funcWithRange('1970-01-01 08:30')).toEqual(true);
+      expect(funcWithStringRange('1970-01-01 08:30')).toEqual(true);
+      expect(funcWithMomentRange('1970-01-01 08:30')).toEqual(true);
     });
   });
 
   describe('when date is end of range', () => {
     it('returns true', () => {
-      expect(funcWithRange('1970-01-31 08:30')).toEqual(true);
+      expect(funcWithStringRange('1970-01-31 08:30')).toEqual(true);
+      expect(funcWithMomentRange('1970-01-31 08:30')).toEqual(true);
     });
   });
 
   describe('when date is before range', () => {
     it('returns false', () => {
-      expect(funcWithRange('1969-12-31 14:20')).toEqual(false);
+      expect(funcWithStringRange('1969-12-31 14:20')).toEqual(false);
+      expect(funcWithMomentRange('1969-12-31 14:20')).toEqual(false);
     });
   });
 
   describe('when date is after range', () => {
     it('returns false', () => {
-      expect(funcWithRange('1970-02-01 08:30')).toEqual(false);
+      expect(funcWithStringRange('1970-02-01 08:30')).toEqual(false);
+      expect(funcWithMomentRange('1970-02-01 08:30')).toEqual(false);
     });
   });
 });
