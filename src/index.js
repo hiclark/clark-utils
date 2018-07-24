@@ -21,4 +21,6 @@ export {
   combinedDateAndTime,
 } from './time';
 
+export { calculateUserAge } from './user-age';
+
 export { getInitials, getFullName, makePossessive } from './user-names';
