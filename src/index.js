@@ -12,6 +12,8 @@ export { isToday, isPastDate, isFutureDate, isInDateRange } from './dates';
 
 export { getFirstElement } from './get-first-element';
 
+export { pluralize, pluralizeWithCount } from './pluralize';
+
 export {
   formatTime,
   formatHours,
