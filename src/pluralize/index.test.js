@@ -2,7 +2,7 @@
 
 import { pluralize, pluralizeWithCount } from './index';
 
-const plurals = [0, 0.1, -4, 10, 12, 1.4];
+const counts = [0, 0.1, -4, 10, 12, 1.4];
 
 describe('pluralize', () => {
   describe('when count is 1', () => {
@@ -22,7 +22,7 @@ describe('pluralize', () => {
   describe('when count is not 1', () => {
     describe('with plural', () => {
       it('returns the expected result', () => {
-        plurals.forEach(count =>
+        counts.forEach(count =>
           expect(pluralize(count, 'goose', 'geese')).toEqual('geese'),
         );
       });
@@ -30,7 +30,7 @@ describe('pluralize', () => {
 
     describe('without plural', () => {
       it('returns the expected result', () => {
-        plurals.forEach(count =>
+        counts.forEach(count =>
           expect(pluralize(count, 'test')).toEqual('tests'),
         );
       });
@@ -56,7 +56,7 @@ describe('pluralizeWithCount', () => {
   describe('when count is not 1', () => {
     describe('with plural', () => {
       it('returns the expected result', () => {
-        plurals.forEach(count =>
+        counts.forEach(count =>
           expect(pluralizeWithCount(count, 'goose', 'geese')).toEqual(
             `${count} geese`,
           ),
@@ -66,7 +66,7 @@ describe('pluralizeWithCount', () => {
 
     describe('without plural', () => {
       it('returns the expected result', () => {
-        plurals.forEach(count =>
+        counts.forEach(count =>
           expect(pluralizeWithCount(count, 'test')).toEqual(`${count} tests`),
         );
       });
