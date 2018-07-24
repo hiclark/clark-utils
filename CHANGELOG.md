@@ -1,7 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## 0.7.0 - 2018-07-16
+## 0.7.1 - 2018-07-24
+- NPM publishing error
+
+## 0.7.0 - 2018-07-24
 ### Added
 - pluralization utils
 - calculateUserAge
