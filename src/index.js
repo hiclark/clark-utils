@@ -23,4 +23,4 @@ export {
 
 export { calculateUserAge } from './users/age';
 
-export { getInitials, getFullName, makePossessive } from './users/names';
+export { getInitials, getFullName, makePossessive } from './users/name';
