@@ -13,6 +13,13 @@ export { isToday, isPastDate, isFutureDate, isInDateRange } from './dates';
 export { getFirstElement } from './get-first-element';
 
 export {
+  localStorageGet,
+  localStorageSet,
+  localStorageClear,
+  localStorageAppend,
+} from './local-storage';
+
+export {
   formatTime,
   formatHours,
   formatTimeWithPeriod,

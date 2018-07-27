@@ -1,6 +1,11 @@
 // @flow
 
-import { get, set, clear, append } from './';
+import {
+  localStorageGet,
+  localStorageSet,
+  localStorageClear,
+  localStorageAppend,
+} from './';
 
 describe('localStorage', () => {
   const keyName = 'TEST_KEY';
@@ -21,29 +26,29 @@ describe('localStorage', () => {
     global.localStorage = localStorageMock();
   });
 
-  describe('after set() is called', () => {
-    it('can get() the correct key and value', () => {
-      set(keyName, keyValueOne);
-      expect(get(keyName)).toEqual(keyValueOne);
+  describe('after localStorageSet() is called', () => {
+    it('can localStorageGet() the correct key and value', () => {
+      localStorageSet(keyName, keyValueOne);
+      expect(localStorageGet(keyName)).toEqual(keyValueOne);
     });
 
-    it('can append() the correct key and value', () => {
+    it('can localStorageAppend() the correct key and value', () => {
       const result = { ...keyValueOne, ...keyValueTwo };
 
-      set(keyName, keyValueOne);
-      append(keyName, keyValueTwo);
-      expect(get(keyName)).toEqual(result);
+      localStorageSet(keyName, keyValueOne);
+      localStorageAppend(keyName, keyValueTwo);
+      expect(localStorageGet(keyName)).toEqual(result);
     });
 
-    it('can clear() the correct key and value', () => {
-      set(keyName, keyValueOne);
-      clear(keyName);
-      expect(get(keyName)).toEqual(null);
+    it('can localStorageClear() the correct key and value', () => {
+      localStorageSet(keyName, keyValueOne);
+      localStorageClear(keyName);
+      expect(localStorageGet(keyName)).toEqual(null);
     });
 
-    it('can not get() if nothing is set()', () => {
-      get(keyName);
-      expect(get(keyName)).toEqual(null);
+    it('can not localStorageGet() if nothing is localStorageSet()', () => {
+      localStorageGet(keyName);
+      expect(localStorageGet(keyName)).toEqual(null);
     });
   });
 });

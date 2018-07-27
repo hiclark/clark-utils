@@ -7,16 +7,16 @@ const expireAllCookies = () =>
       .replace(/=.*/, `=;expires=${new Date(0).toUTCString()};path=/`);
   });
 
-export const set = (key: string, value: {}) =>
+export const localStorageSet = (key: string, value: {}) =>
   localStorage.setItem(key, JSON.stringify(value));
 
-export const clear = (key: string) => {
+export const localStorageClear = (key: string) => {
   expireAllCookies();
   localStorage.removeItem(key);
 };
 
 type GetType = {};
-export const get = (key: string): ?GetType => {
+export const localStorageGet = (key: string): ?GetType => {
   const jsonString = localStorage.getItem(key);
   let parsedJson = null;
 
@@ -24,16 +24,16 @@ export const get = (key: string): ?GetType => {
     try {
       parsedJson = JSON.parse(jsonString);
     } catch (e) {
-      clear(key);
+      localStorageClear(key);
     }
   }
   return parsedJson;
 };
 
-export const append = (key: string, value: {}) => {
-  const json = get(key);
+export const localStorageAppend = (key: string, value: {}) => {
+  const json = localStorageGet(key);
   if (json) {
     const newObject = { ...json, ...value };
-    set(key, newObject);
+    localStorageSet(key, newObject);
   }
 };
