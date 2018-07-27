@@ -1,6 +1,6 @@
 // @flow
 
-type User =
+type UserType =
   | {
       firstName?: string,
       lastName?: string,
@@ -16,10 +16,15 @@ type User =
 
 const getInitial = (str: string) => str.charAt(0).toUpperCase();
 
-export const getInitials = ({ firstName = '', lastName = '' }: User): string =>
-  `${getInitial(firstName)}${getInitial(lastName)}`;
+export const getInitials = ({
+  firstName = '',
+  lastName = '',
+}: UserType): string => `${getInitial(firstName)}${getInitial(lastName)}`;
 
-export const getFullName = ({ firstName = '', lastName = '' }: User): string =>
+export const getFullName = ({
+  firstName = '',
+  lastName = '',
+}: UserType): string =>
   firstName && lastName ? `${firstName} ${lastName}` : `${firstName}`;
 
 export const makePossessive = (name: string): string =>

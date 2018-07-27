@@ -1,11 +1,12 @@
 // @flow
 import moment from 'moment';
+import { pluralizeWithCount } from '../pluralize';
 
 export const formatHours = (hours: number): string =>
-  hours === 1 ? `${hours} hour` : `${hours} hours`;
+  pluralizeWithCount(hours, 'hour');
 
 export const formatMinutes = (minutes: number): string =>
-  minutes > 1 ? `${minutes} minutes` : `${minutes} minute`;
+  pluralizeWithCount(minutes, 'minute');
 
 export const formatTime = (hours: number): string => {
   const minutes = hours * 60;

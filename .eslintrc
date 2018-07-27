@@ -14,6 +14,10 @@
     "spy": false
   },
   "rules": {
+    "flowtype/type-id-match": [
+      2,
+      "^([A-Z][a-z0-9]*)+Type$"
+    ],
     "flowtype/require-valid-file-annotation": [
       2,
       "always", {

@@ -1,6 +1,6 @@
 {
   "name": "clark-utils",
-  "version": "0.6.0",
+  "version": "0.7.1",
   "description": "Shared utility functions for Clark frontend applications",
   "main": "lib/index.js",
   "author": "Clark, Inc.",
