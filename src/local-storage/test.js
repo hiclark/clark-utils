@@ -12,6 +12,20 @@ describe('localStorage', () => {
   const keyValueOne = { isTest: true, status: 'test' };
   const keyValueTwo = { firstName: 'Tester', lastName: 'Account' };
 
+  const localStorageGetHelper = () => {
+    const jsonString = localStorage.getItem(keyName);
+    let parsedJson = null;
+
+    if (jsonString) {
+      try {
+        parsedJson = JSON.parse(jsonString);
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    return parsedJson;
+  };
+
   beforeAll(() => {
     const localStorageMock = () => {
       let store = {};
@@ -30,8 +44,7 @@ describe('localStorage', () => {
 
   it('can localStorageSet() the correct key and value', () => {
     localStorageSet(keyName, keyValueOne);
-    const value = localStorage.getItem(keyName);
-    const expected = JSON.parse(value);
+    const expected = localStorageGetHelper();
     expect(expected).toEqual(keyValueOne);
   });
 
@@ -42,14 +55,11 @@ describe('localStorage', () => {
     });
 
     it('can localStorageAppend() the correct value by key', () => {
-      const result = { ...keyValueOne, ...keyValueTwo };
-
       localStorage.setItem(keyName, JSON.stringify(keyValueOne));
       localStorageAppend(keyName, keyValueTwo);
 
-      const value = localStorage.getItem(keyName);
-      const expected = JSON.parse(value);
-
+      const result = { ...keyValueOne, ...keyValueTwo };
+      const expected = localStorageGetHelper();
       expect(expected).toEqual(result);
     });
 
