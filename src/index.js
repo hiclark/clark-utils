@@ -12,6 +12,8 @@ export { isToday, isPastDate, isFutureDate, isInDateRange } from './dates';
 
 export { getFirstElement } from './get-first-element';
 
+export { pluralize, pluralizeWithCount } from './pluralize';
+
 export {
   localStorageGet,
   localStorageSet,
@@ -26,4 +28,6 @@ export {
   combinedDateAndTime,
 } from './time';
 
-export { getInitials, getFullName, makePossessive } from './user-names';
+export { calculateUserAge } from './users/age';
+
+export { getInitials, getFullName, makePossessive } from './users/name';
