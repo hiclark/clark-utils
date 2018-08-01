@@ -28,24 +28,32 @@ describe('localStorage', () => {
 
   beforeAll(() => {
     const localStorageMock = () => {
-      let store = {};
+      const store = {};
       return {
         getItem: key => store[key] || null,
         setItem: (key, value) => {
           store[key] = value;
         },
-        removeItem: () => {
-          store = {};
+        removeItem: key => {
+          store[key] = null;
         },
       };
     };
     global.localStorage = localStorageMock();
   });
 
+  beforeEach(() => {
+    localStorage.removeItem(keyName);
+  });
+
   it('can localStorageSet() the correct key and value', () => {
     localStorageSet(keyName, keyValueOne);
     const expected = localStorageGetHelper();
     expect(expected).toEqual(keyValueOne);
+  });
+
+  it('can localStorageGet() the correct value when no key/value is set', () => {
+    expect(localStorage.getItem(keyName)).toEqual(null);
   });
 
   describe('after localStorageSet() is called', () => {
