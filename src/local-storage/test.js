@@ -13,42 +13,50 @@ describe('localStorage', () => {
   const keyValueTwo = { firstName: 'Tester', lastName: 'Account' };
 
   beforeAll(() => {
-    let store = {};
-    const localStorageMock = () => ({
-      getItem: key => store[key] || null,
-      setItem: (key, value) => {
-        store[key] = value;
-      },
-      removeItem: () => {
-        store = {};
-      },
-    });
+    const localStorageMock = () => {
+      let store = {};
+      return {
+        getItem: key => store[key] || null,
+        setItem: (key, value) => {
+          store[key] = value;
+        },
+        removeItem: () => {
+          store = {};
+        },
+      };
+    };
     global.localStorage = localStorageMock();
   });
 
+  it('can localStorageSet() the correct key and value', () => {
+    localStorageSet(keyName, keyValueOne);
+    const value = localStorage.getItem(keyName);
+    const expected = JSON.parse(value);
+    expect(expected).toEqual(keyValueOne);
+  });
+
   describe('after localStorageSet() is called', () => {
-    it('can localStorageGet() the correct key and value', () => {
-      localStorageSet(keyName, keyValueOne);
+    it('can localStorageGet() the correct value by key', () => {
+      localStorage.setItem(keyName, JSON.stringify(keyValueOne));
       expect(localStorageGet(keyName)).toEqual(keyValueOne);
     });
 
-    it('can localStorageAppend() the correct key and value', () => {
+    it('can localStorageAppend() the correct value by key', () => {
       const result = { ...keyValueOne, ...keyValueTwo };
 
-      localStorageSet(keyName, keyValueOne);
+      localStorage.setItem(keyName, JSON.stringify(keyValueOne));
       localStorageAppend(keyName, keyValueTwo);
-      expect(localStorageGet(keyName)).toEqual(result);
+
+      const value = localStorage.getItem(keyName);
+      const expected = JSON.parse(value);
+
+      expect(expected).toEqual(result);
     });
 
-    it('can localStorageClear() the correct key and value', () => {
-      localStorageSet(keyName, keyValueOne);
+    it('can localStorageClear() the value(s) by key', () => {
+      localStorage.setItem(keyName, JSON.stringify(keyValueOne));
       localStorageClear(keyName);
-      expect(localStorageGet(keyName)).toEqual(null);
-    });
-
-    it('can not localStorageGet() if nothing is localStorageSet()', () => {
-      localStorageGet(keyName);
-      expect(localStorageGet(keyName)).toEqual(null);
+      expect(localStorage.getItem(keyName)).toEqual(null);
     });
   });
 });
