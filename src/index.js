@@ -15,6 +15,13 @@ export { getFirstElement } from './get-first-element';
 export { pluralize, pluralizeWithCount } from './pluralize';
 
 export {
+  localStorageGet,
+  localStorageSet,
+  localStorageClear,
+  localStorageAppend,
+} from './local-storage';
+
+export {
   formatTime,
   formatHours,
   formatTimeWithPeriod,
