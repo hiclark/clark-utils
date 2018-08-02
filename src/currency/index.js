@@ -1,5 +1,4 @@
 // @flow
-//now use default import here (no brances) to support webpack 
 import Big from 'big.js';
 
 const numberWithCommas = (number: number): string =>
