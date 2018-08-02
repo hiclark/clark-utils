@@ -1,5 +1,5 @@
 // @flow
-import { Big } from 'big.js';
+import Big from 'big.js';
 
 const numberWithCommas = (number: number): string =>
   new Big(number).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
