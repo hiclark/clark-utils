@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 
 ## 0.8.2 -2018-08-02
+### Changed
 - currency utils use default import of big.js
 
 ## 0.8.1 - 2018-08-02
