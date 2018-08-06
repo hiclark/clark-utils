@@ -15,7 +15,7 @@ export const localStorageClear = (key: string) => {
   localStorage.removeItem(key);
 };
 
-export const localStorageGet = (key: string): ?{} => {
+export const localStorageGet = (key: string): ?Object => {
   const jsonString = localStorage.getItem(key);
   let parsedJson = null;
 
