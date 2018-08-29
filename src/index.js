@@ -31,3 +31,5 @@ export {
 export { calculateUserAge } from './users/age';
 
 export { getInitials, getFullName, makePossessive } from './users/name';
+
+export { removeFirstInstance } from './remove-first-instance';
