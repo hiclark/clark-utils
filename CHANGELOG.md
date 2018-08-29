@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.8.4 -2018-08-29
+### Added
+- removeFirstInstance function
 
 ## 0.8.3 -2018-08-03
 ### Changed
