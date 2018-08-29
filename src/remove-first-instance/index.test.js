@@ -1,6 +1,6 @@
 // @flow
 
-import removeFirstInstance from './index';
+import { removeFirstInstance } from './index';
 
 describe('removeFirstInstance', () => {
   const arr = ['a', 'b', 'c', 'd'];

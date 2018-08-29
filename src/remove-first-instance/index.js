@@ -7,5 +7,3 @@ export const removeFirstInstance = (arr: any[], item: any) => {
   }
   return arr;
 };
-
-export default removeFirstInstance;
