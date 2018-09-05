@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.9.0 -2018-09-05
+### Added
+- roundToXDecimalPlaces function
+- minutesToHours, hoursToMinutes, etc functions
+
 ## 0.8.4 -2018-08-29
 ### Added
 - removeFirstInstance function
