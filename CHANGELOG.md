@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 
 ## 0.9.0 -2018-09-05
+### Fixed
+- build issue
+
+## 0.9.0 -2018-09-05
 ### Added
 - roundToXDecimalPlaces function
 - minutesToHours, hoursToMinutes, etc functions
