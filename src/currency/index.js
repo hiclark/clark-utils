@@ -1,14 +1,15 @@
 // @flow
 import Big from 'big.js';
+import { roundToTwoDecimalPlaces, roundToZeroDecimalPlaces } from '../round';
 
 const numberWithCommas = (number: number): string =>
   new Big(number).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
 export const centsToDollars = (cents: number): number =>
-  Number(new Big(cents / 100).toFixed(2));
+  roundToTwoDecimalPlaces(new Big(cents / 100));
 
 export const dollarsToCents = (dollars: number): number =>
-  Number(new Big(dollars * 100).toFixed(0));
+  roundToZeroDecimalPlaces(new Big(dollars * 100));
 
 export const formatCentsToDollars = (cents: number): string =>
   `$${numberWithCommas(centsToDollars(cents))}`;

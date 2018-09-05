@@ -1,6 +1,7 @@
 // @flow
 import moment from 'moment';
 import { pluralizeWithCount } from '../pluralize';
+import { roundToZeroDecimalPlaces, roundToTwoDecimalPlaces } from '../round';
 
 export const formatHours = (hours: number): string =>
   pluralizeWithCount(hours, 'hour');
@@ -34,3 +35,15 @@ export const combinedDateAndTime = (date: moment, time: moment) =>
     .hour(time.get('hour'))
     .minute(time.get('minute'))
     .format();
+
+export const minutesToHours = (durationInMinutes: number) =>
+  roundToZeroDecimalPlaces(durationInMinutes / 60);
+
+export const hoursToMinutes = (durationInHours: number) =>
+  roundToTwoDecimalPlaces(durationInHours * 60);
+
+export const formatMinutesToHours = (durationInMinutes: number) =>
+  formatHours(minutesToHours(durationInMinutes));
+
+export const formatHoursToMinutes = (durationInHours: number) =>
+  formatMinutes(hoursToMinutes(durationInHours));

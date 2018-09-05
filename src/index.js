@@ -22,10 +22,20 @@ export {
 export { pluralize, pluralizeWithCount } from './pluralize';
 
 export {
+  roundToXDecimalPlaces,
+  roundToZeroDecimalPlaces,
+  roundToTwoDecimalPlaces,
+} from './round';
+
+export {
   formatTime,
   formatHours,
   formatTimeWithPeriod,
   combinedDateAndTime,
+  minutesToHours,
+  hoursToMinutes,
+  formatMinutesToHours,
+  formatHoursToMinutes,
 } from './time';
 
 export { calculateUserAge } from './users/age';
