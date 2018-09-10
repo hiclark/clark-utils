@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.10.0 -2018-09-10
+### Fixed
+- hoursToMinutes and minutesToHours rounding was reversed
+
 ## 0.9.1 -2018-09-05
 ### Fixed
 - build issue
