@@ -69,15 +69,15 @@ describe('hoursToMinutes', () => {
 describe('minutesToHours', () => {
   it('returns the expected result', () => {
     const testValues = [
-      { output: 1, input: 60 },
-      { output: 1.05, input: 63 },
-      { output: 1.25, input: 75 },
-      { output: 1.5, input: 90 },
-      { output: 1.75, input: 105 },
-      { output: 2, input: 120 },
-      { output: 2.25, input: 135 },
-      { output: 2.5, input: 150 },
-      { output: 2.75, input: 165 },
+      { input: 60, output: 1 },
+      { input: 63, output: 1.05 },
+      { input: 75, output: 1.25 },
+      { input: 90, output: 1.5 },
+      { input: 105, output: 1.75 },
+      { input: 120, output: 2 },
+      { input: 135, output: 2.25 },
+      { input: 150, output: 2.5 },
+      { input: 165, output: 2.75 },
     ];
 
     testValues.forEach(testValue =>
