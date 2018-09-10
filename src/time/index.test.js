@@ -1,7 +1,13 @@
 // @flow
 
 import moment from 'moment';
-import { formatTime, formatTimeWithPeriod, combinedDateAndTime } from './';
+import {
+  formatTime,
+  formatTimeWithPeriod,
+  combinedDateAndTime,
+  hoursToMinutes,
+  minutesToHours,
+} from './';
 
 describe('formatTime', () => {
   it('returns the expected result', () => {
@@ -37,5 +43,45 @@ describe('combinedDateAndTime', () => {
     const formattedDate = date.add(2, 'hours').format();
 
     expect(combinedDateAndTime(date, time)).toEqual(formattedDate);
+  });
+});
+
+describe('hoursToMinutes', () => {
+  it('returns the expected result', () => {
+    const testValues = [
+      { input: 1, output: 60 },
+      { input: 1.05, output: 63 },
+      { input: 1.25, output: 75 },
+      { input: 1.5, output: 90 },
+      { input: 1.75, output: 105 },
+      { input: 2, output: 120 },
+      { input: 2.25, output: 135 },
+      { input: 2.5, output: 150 },
+      { input: 2.75, output: 165 },
+    ];
+
+    testValues.forEach(testValue =>
+      expect(hoursToMinutes(testValue.input)).toEqual(testValue.output),
+    );
+  });
+});
+
+describe('minutesToHours', () => {
+  it('returns the expected result', () => {
+    const testValues = [
+      { output: 1, input: 60 },
+      { output: 1.05, input: 63 },
+      { output: 1.25, input: 75 },
+      { output: 1.5, input: 90 },
+      { output: 1.75, input: 105 },
+      { output: 2, input: 120 },
+      { output: 2.25, input: 135 },
+      { output: 2.5, input: 150 },
+      { output: 2.75, input: 165 },
+    ];
+
+    testValues.forEach(testValue =>
+      expect(minutesToHours(testValue.input)).toEqual(testValue.output),
+    );
   });
 });

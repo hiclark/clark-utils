@@ -37,10 +37,10 @@ export const combinedDateAndTime = (date: moment, time: moment) =>
     .format();
 
 export const minutesToHours = (durationInMinutes: number) =>
-  roundToZeroDecimalPlaces(durationInMinutes / 60);
+  roundToTwoDecimalPlaces(durationInMinutes / 60);
 
 export const hoursToMinutes = (durationInHours: number) =>
-  roundToTwoDecimalPlaces(durationInHours * 60);
+  roundToZeroDecimalPlaces(durationInHours * 60);
 
 export const formatMinutesToHours = (durationInMinutes: number) =>
   formatHours(minutesToHours(durationInMinutes));
