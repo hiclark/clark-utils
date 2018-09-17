@@ -1,5 +1,10 @@
 // @flow
 
+import type { HoursType as Hours, MinutesType as Minutes } from './time';
+
+export type HoursType = Hours;
+export type MinutesType = Minutes;
+
 export {
   centsToDollars,
   dollarsToCents,
@@ -32,6 +37,8 @@ export {
   formatHours,
   formatTimeWithPeriod,
   combinedDateAndTime,
+  castNumberToHoursType,
+  castNumberToMinutesType,
   minutesToHours,
   hoursToMinutes,
   formatMinutesToHours,

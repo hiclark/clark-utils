@@ -7,6 +7,8 @@ import {
   combinedDateAndTime,
   hoursToMinutes,
   minutesToHours,
+  castNumberToHoursType,
+  castNumberToMinutesType,
 } from './';
 
 describe('formatTime', () => {
@@ -24,7 +26,9 @@ describe('formatTime', () => {
     ];
 
     testValues.forEach(testValue =>
-      expect(formatTime(testValue.input)).toEqual(testValue.output),
+      expect(formatTime(castNumberToHoursType(testValue.input))).toEqual(
+        testValue.output,
+      ),
     );
   });
 });
@@ -61,7 +65,9 @@ describe('hoursToMinutes', () => {
     ];
 
     testValues.forEach(testValue =>
-      expect(hoursToMinutes(testValue.input)).toEqual(testValue.output),
+      expect(hoursToMinutes(castNumberToHoursType(testValue.input))).toEqual(
+        testValue.output,
+      ),
     );
   });
 });
@@ -81,7 +87,9 @@ describe('minutesToHours', () => {
     ];
 
     testValues.forEach(testValue =>
-      expect(minutesToHours(testValue.input)).toEqual(testValue.output),
+      expect(minutesToHours(castNumberToMinutesType(testValue.input))).toEqual(
+        testValue.output,
+      ),
     );
   });
 });

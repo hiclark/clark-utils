@@ -3,13 +3,19 @@ import moment from 'moment';
 import { pluralizeWithCount } from '../pluralize';
 import { roundToZeroDecimalPlaces, roundToTwoDecimalPlaces } from '../round';
 
-export const formatHours = (hours: number): string =>
+export opaque type HoursType: number = number;
+export opaque type MinutesType: number = number;
+
+export const castNumberToHoursType = (x: number): HoursType => x;
+export const castNumberToMinutesType = (x: number): MinutesType => x;
+
+export const formatHours = (hours: HoursType): string =>
   pluralizeWithCount(hours, 'hour');
 
-export const formatMinutes = (minutes: number): string =>
+export const formatMinutes = (minutes: MinutesType): string =>
   pluralizeWithCount(minutes, 'minute');
 
-export const formatTime = (hours: number): string => {
+export const formatTime = (hours: HoursType): string => {
   const minutes = hours * 60;
   const isHourInteger = Number.isInteger(hours);
 
@@ -36,14 +42,14 @@ export const combinedDateAndTime = (date: moment, time: moment) =>
     .minute(time.get('minute'))
     .format();
 
-export const minutesToHours = (durationInMinutes: number) =>
+export const minutesToHours = (durationInMinutes: MinutesType): HoursType =>
   roundToTwoDecimalPlaces(durationInMinutes / 60);
 
-export const hoursToMinutes = (durationInHours: number) =>
+export const hoursToMinutes = (durationInHours: HoursType): MinutesType =>
   roundToZeroDecimalPlaces(durationInHours * 60);
 
-export const formatMinutesToHours = (durationInMinutes: number) =>
+export const formatMinutesToHours = (durationInMinutes: MinutesType): string =>
   formatHours(minutesToHours(durationInMinutes));
 
-export const formatHoursToMinutes = (durationInHours: number) =>
+export const formatHoursToMinutes = (durationInHours: HoursType): string =>
   formatMinutes(hoursToMinutes(durationInHours));
