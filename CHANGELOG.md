@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.10.1 -2018-11-05
+### Fixed
+- adds loadDynamicScript util for handling dynamically-generated script tags
+
 ## 0.10.0 -2018-09-10
 ### Fixed
 - hoursToMinutes and minutesToHours rounding was reversed
