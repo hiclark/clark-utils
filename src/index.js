@@ -12,6 +12,8 @@ export { isToday, isPastDate, isFutureDate, isInDateRange } from './dates';
 
 export { getFirstElement } from './get-first-element';
 
+export { loadDynamicScript } from './load-dynamic-script';
+
 export {
   localStorageGet,
   localStorageSet,
