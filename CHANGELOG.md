@@ -1,32 +1,32 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## 0.10.1 -2018-11-05
-### Fixed
-- adds loadDynamicScript util for handling dynamically-generated script tags
+## 0.11.0 - 2018-11-07
+### Added
+- loadDynamicScript for handling dynamically-generated script tags
 
-## 0.10.0 -2018-09-10
+## 0.10.0 - 2018-09-10
 ### Fixed
 - hoursToMinutes and minutesToHours rounding was reversed
 
-## 0.9.1 -2018-09-05
+## 0.9.1 - 2018-09-05
 ### Fixed
 - build issue
 
-## 0.9.0 -2018-09-05
+## 0.9.0 - 2018-09-05
 ### Added
 - roundToXDecimalPlaces function
 - minutesToHours, hoursToMinutes, etc functions
 
-## 0.8.4 -2018-08-29
+## 0.8.4 - 2018-08-29
 ### Added
 - removeFirstInstance function
 
-## 0.8.3 -2018-08-03
+## 0.8.3 - 2018-08-03
 ### Changed
 - type of expected return from localStorageGet()
 
-## 0.8.2 -2018-08-02
+## 0.8.2 - 2018-08-02
 ### Changed
 - currency utils use default import of big.js
 
