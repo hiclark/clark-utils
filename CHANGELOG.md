@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.12.1 - 2018-12-12
+### Fixed
+- forgot export serializePromises
+
 ## 0.12.0 - 2018-12-12
 ### Added
 - serializePromises function
