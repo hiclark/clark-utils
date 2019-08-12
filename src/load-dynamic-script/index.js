@@ -2,6 +2,7 @@
 
 export const loadDynamicScript = (src: string, id: string) => (
   callback: any,
+  setStateCallback: boolean,
 ) => {
   const existingScript = document.getElementById(id);
 
@@ -14,5 +15,8 @@ export const loadDynamicScript = (src: string, id: string) => (
     script.onload = () => {
       if (callback) callback();
     };
+  }
+  if (setStateCallback) {
+    callback();
   }
 };
