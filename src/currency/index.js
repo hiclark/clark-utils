@@ -11,8 +11,10 @@ export const centsToDollars = (cents: number): number =>
 export const dollarsToCents = (dollars: number): number =>
   roundToZeroDecimalPlaces(new Big(dollars * 100));
 
-export const formatCentsToDollars = (cents: number): string =>
-  `$${numberWithCommas(centsToDollars(cents))}`;
+export const formatCentsToDollars = (cents: ?number): string => {
+  if (!cents) return '$—'
+  return `$${numberWithCommas(centsToDollars(cents))}`;
+}
 
 export const formatDollars = (dollars: number): string =>
   `$${numberWithCommas(dollars)}`;
