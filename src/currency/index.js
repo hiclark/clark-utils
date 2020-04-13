@@ -27,5 +27,5 @@ export const formatDollars = (dollars: ?number): string => {
   return `$${numberWithCommas(dollars || 0)}`;
 }
 
-export const formatDollarsPerHour = (dollarsPerHour: number): string =>
+export const formatDollarsPerHour = (dollarsPerHour: ?number): string =>
   `${formatDollars(dollarsPerHour)}/hr`;
